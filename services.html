@@ -30,7 +30,52 @@
             <nav id="navbar">
                 <ul>
 
-                    <li><a href="services.html" class="active">Services</a></li>
+                    <li class="has-mega-menu">
+                        <a href="javascript:void(0)" class="active">Services <i class="fas fa-chevron-down"
+                                style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-grid">
+                                <!-- Column 1: Growth -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Growth</h4>
+                                    <a href="services.html#marketing" class="mega-menu-item">
+                                        <span class="mm-title">Digital Marketing</span>
+                                        <span class="mm-desc">SEO, SEM, social & content strategies.</span>
+                                    </a>
+                                    <a href="services.html#influencer" class="mega-menu-item">
+                                        <span class="mm-title">Influencer Production</span>
+                                        <span class="mm-desc">Campaigns, content & video.</span>
+                                    </a>
+                                </div>
+
+                                <!-- Column 2: Development -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Development</h4>
+                                    <a href="services.html#web" class="mega-menu-item">
+                                        <span class="mm-title">Web Services</span>
+                                        <span class="mm-desc">Dev, hosting & e-commerce.</span>
+                                    </a>
+                                    <a href="services.html#app" class="mega-menu-item">
+                                        <span class="mm-title">App Development</span>
+                                        <span class="mm-desc">Mobile & web applications.</span>
+                                    </a>
+                                </div>
+
+                                <!-- Column 3: Consulting & Creative -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Enterprise & Creative</h4>
+                                    <a href="services.html#consulting" class="mega-menu-item">
+                                        <span class="mm-title">IT Consulting</span>
+                                        <span class="mm-desc">Strategy & cloud solutions.</span>
+                                    </a>
+                                    <a href="services.html#creative" class="mega-menu-item">
+                                        <span class="mm-title">Creative Production</span>
+                                        <span class="mm-desc">Video, photo & branding.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="case-studies.html">Case Study</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -58,54 +103,138 @@
 
     <!-- Services Section -->
     <section id="services">
-        <div class="container">
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Performance campaigns, SEO, SEM, social media management, influencer marketing, content creation,
-                        analytics-driven growth.</p>
+        <!-- Digital Marketing -->
+        <section id="marketing" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>Digital Marketing</h2>
+                    <p>In a world fighting for attention, we ensure your brand gets noticed by the right people. Our
+                        data-driven approach to digital marketing removes the guesswork.</p>
+                    <ul>
+                        <li>SEO & SEM Strategies</li>
+                        <li>Social Media Management</li>
+                        <li>Content Marketing & Strategy</li>
+                        <li>Analytics & Performance Tracking</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Start Your Campaign</a>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-video"></i></div>
-                    <h3>Influencer Production</h3>
-                    <p>Complete influencer ecosystem: scouting, campaign design, content production, video shoots,
-                        branded collaborations, and performance tracking.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-city"></i></div>
-                    <h3>IT Consulting Services</h3>
-                    <p>Strategy, infrastructure, cloud adoption, enterprise architecture, and digital transformation.
-                    </p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-globe"></i></div>
-                    <h3>Web Services</h3>
-                    <p>Website creation, hosting, optimization, e-commerce solutions, and premium maintenance.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>App Development</h3>
-                    <p>Custom mobile and web applications designed for scalability, usability, and innovation.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="service-card">
-                    <div class="icon-box"><i class="fas fa-photo-video"></i></div>
-                    <h3>Creative Production Facilities</h3>
-                    <p>Premium spaces for video shoots, photography, and branded content creation.</p>
+                <div class="service-detail-img">
+                    <img src="images/service-marketing.jpg" alt="Digital Marketing"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=Digital+Marketing'">
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Influencer Production -->
+        <section id="influencer" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>Influencer Production</h2>
+                    <p>We manage the complete influencer ecosystem. From scouting the perfect voices for your brand to
+                        producing high-quality video content, we handle it all.</p>
+                    <ul>
+                        <li>Talent Scouting & Management</li>
+                        <li>Campaign Strategy & Design</li>
+                        <li>High-End Video Production</li>
+                        <li>Performance Analytics</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Launch Influence</a>
+                </div>
+                <div class="service-detail-img">
+                    <img src="images/service-influencer.jpg" alt="Influencer Production"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=Influencer+Production'">
+                </div>
+            </div>
+        </section>
+
+        <!-- IT Consulting -->
+        <section id="consulting" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>IT Consulting Services</h2>
+                    <p>Navigate the complex technology landscape with confidence. We provide strategic guidance to
+                        modernize
+                        your infrastructure and optimize operations.</p>
+                    <ul>
+                        <li>Digital Transformation Strategy</li>
+                        <li>Cloud Migration & Adoption</li>
+                        <li>Enterprise Architecture</li>
+                        <li>Security & Compliance</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Get Expert Advice</a>
+                </div>
+                <div class="service-detail-img">
+                    <img src="images/service-consulting.jpg" alt="IT Consulting"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=IT+Consulting'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Web Services -->
+        <section id="web" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>Web Services</h2>
+                    <p>Your website is your digital headquarters. We build blazing fast, secure, and beautiful websites
+                        that convert visitors into customers.</p>
+                    <ul>
+                        <li>Custom Website Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Hosting & Maintenance</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Build Your Web Presence</a>
+                </div>
+                <div class="service-detail-img">
+                    <img src="images/service-web.jpg" alt="Web Services"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=Web+Services'">
+                </div>
+            </div>
+        </section>
+
+        <!-- App Development -->
+        <section id="app" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>App Development</h2>
+                    <p>We build mobile applications that users love. From concept to launch, we deliver scalable and
+                        intuitive apps for iOS and Android.</p>
+                    <ul>
+                        <li>iOS & Android Development</li>
+                        <li>Cross-Platform Solutions (Flutter/React Native)</li>
+                        <li>UI/UX Design</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Create Your App</a>
+                </div>
+                <div class="service-detail-img">
+                    <img src="images/service-app.jpg" alt="App Development"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=App+Development'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Creative Production -->
+        <section id="creative" class="service-detail-section">
+            <div class="container service-detail-container">
+                <div class="service-detail-content">
+                    <h2>Creative Production</h2>
+                    <p>Tell your story with cinematic quality. Our creative studios provide the space and expertise to
+                        produce world-class content.</p>
+                    <ul>
+                        <li>Professional Video Shoots</li>
+                        <li>Product Photography</li>
+                        <li>Brand Storytelling</li>
+                        <li>Post-Production Services</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Book Studio</a>
+                </div>
+                <div class="service-detail-img">
+                    <img src="images/service-creative.jpg" alt="Creative Production"
+                        onerror="this.src='https://via.placeholder.com/600x400/E8EAF6/3949AB?text=Creative+Production'">
+                </div>
+            </div>
+        </section>
     </section>
 
     <!-- Government & Enterprise Solutions Section -->

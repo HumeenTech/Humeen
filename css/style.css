@@ -118,6 +118,16 @@ img {
     background-color: var(--light-indigo);
 }
 
+html {
+    scroll-padding-top: 100px;
+    /* Adjust based on header height */
+}
+
+.has-mega-menu:hover>a {
+    font-weight: 700;
+    color: var(--primary-indigo);
+}
+
 /* --- Buttons --- */
 .btn {
     display: inline-block;
@@ -251,8 +261,13 @@ header.scrolled #navbar a::after {
     background-color: var(--primary-indigo);
 }
 
-#navbar a:hover::after {
+#navbar a:hover::after,
+#navbar a.active::after {
     width: 100%;
+}
+
+#navbar a.active {
+    font-weight: 700;
 }
 
 .header-cta .btn {
@@ -409,18 +424,39 @@ header.scrolled .bar {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--light-indigo);
+    background: var(--primary-indigo);
     border-radius: 20px;
     font-size: 2rem;
-    color: var(--primary-indigo);
+    color: var(--primary-white);
     margin-bottom: 2rem;
     transition: var(--transition-fast);
 }
 
 .service-card:hover .icon-box {
-    background: var(--grad-primary);
-    color: #ffffff;
     transform: scale(1.1) rotate(5deg);
+}
+
+*/
+
+/* Replacing Icon Box with Image */
+.service-img-wrapper {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-img-wrapper img {
+    transform: scale(1.1);
 }
 
 /* Hover glow effect */
@@ -1228,4 +1264,159 @@ footer {
     background: var(--primary-indigo);
     color: #fff;
     border-color: var(--primary-indigo);
+}
+
+/* --- Mega Menu --- */
+#navbar ul li.has-mega-menu {
+    position: relative;
+    padding-bottom: 20px;
+    /* Bridge to menu */
+    margin-bottom: -20px;
+}
+
+.mega-menu-container {
+    position: absolute;
+    top: 100%;
+    left: -200px;
+    /* Adjust alignment */
+    width: 800px;
+    /* Wider for 3 columns */
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    /* Slightly sharper */
+    padding: 2.5rem;
+    /* More breathing room */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-top: 4px solid var(--primary-indigo);
+}
+
+#navbar ul li.has-mega-menu:hover .mega-menu-container {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mega-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3 Columns */
+    gap: 2rem;
+}
+
+.mm-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.mm-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.mega-menu-item {
+    display: block;
+    text-decoration: none !important;
+    background: transparent;
+    transition: transform 0.2s;
+}
+
+.mega-menu-item:hover {
+    transform: translateX(5px);
+}
+
+/* Typography Refinement */
+.mega-menu-item span {
+    display: block;
+}
+
+.mm-title {
+    font-weight: 700;
+    color: var(--deep-indigo);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.mm-desc {
+    font-weight: 400;
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Specific adjustment for the nav link hover effect conflict */
+#navbar .mega-menu-item::after {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .mega-menu-container {
+        display: none;
+        /* Mobile menu handling needed if robust */
+    }
+}
+
+/* --- Business Idea Section --- */
+#business-idea {
+    padding: 6rem 2rem;
+    background-color: var(--deep-indigo);
+    color: var(--primary-white);
+    text-align: center;
+}
+
+.idea-title {
+    font-size: 3rem;
+    color: var(--primary-white);
+    margin-bottom: 1rem;
+}
+
+.idea-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.idea-input-wrapper {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    background: var(--primary-white);
+    padding: 0.5rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.idea-input {
+    flex: 1;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    outline: none;
+    border-radius: 50px;
+    background: transparent;
+}
+
+.idea-btn {
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.idea-footer {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 1rem;
 }
