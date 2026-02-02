@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Portfolio - Humeen</title>
+    <meta name="description"
+        content="HUMEEN Premium Portfolio: Digital Marketing, Influencer Production, IT Consulting, and Web/App Development Success Stories.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Portfolio Specific Styles */
+        .portfolio-intro {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .service-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-service-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-service-card h3 {
+            color: var(--primary-indigo);
+            margin-bottom: 1rem;
+        }
+
+        .success-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .success-card {
+            background: linear-gradient(135deg, var(--primary-indigo), #536dfe);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .success-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .success-card .stat {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 3rem;
+            border-left: 5px solid var(--primary-indigo);
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .why-humeen-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1rem;
+        }
+
+        .why-humeen-list li {
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-humeen-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-indigo);
+        }
+
+        .closing-note {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .closing-note p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/humeen-logo.png" alt="Humeen Logo">
+                    <span class="logo-text">Humeen<span class="dot">.</span></span>
+                </a>
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li class="has-mega-menu">
+                        <a href="javascript:void(0)">Services <i class="fas fa-chevron-down"
+                                style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-grid">
+                                <!-- Column 1: Growth -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Growth</h4>
+                                    <a href="services.html#marketing" class="mega-menu-item">
+                                        <span class="mm-title">Digital Marketing</span>
+                                        <span class="mm-desc">Performance campaigns, SEO, SEM, social media management,
+                                            influencer marketing, content creation, analytics-driven growth.</span>
+                                    </a>
+                                    <a href="services.html#influencer" class="mega-menu-item">
+                                        <span class="mm-title">Influencer Production</span>
+                                        <span class="mm-desc">Complete influencer ecosystem: scouting, campaign design,
+                                            content production, video shoots, branded collaborations, and performance
+                                            tracking.</span>
+                                    </a>
+                                </div>
+
+                                <!-- Column 2: Development -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Development</h4>
+                                    <a href="services.html#web" class="mega-menu-item">
+                                        <span class="mm-title">Web Services</span>
+                                        <span class="mm-desc">Website creation, hosting, optimization, e-commerce
+                                            solutions, and premium maintenance.</span>
+                                    </a>
+                                    <a href="services.html#app" class="mega-menu-item">
+                                        <span class="mm-title">App Development</span>
+                                        <span class="mm-desc">Custom mobile and web applications designed for
+                                            scalability, usability, and innovation.</span>
+                                    </a>
+                                </div>
+
+                                <!-- Column 3: Consulting & Creative -->
+                                <div class="mm-column">
+                                    <h4 class="mm-header">Enterprise & Creative</h4>
+                                    <a href="services.html#consulting" class="mega-menu-item">
+                                        <span class="mm-title">IT Consulting Services</span>
+                                        <span class="mm-desc">Strategy, infrastructure, cloud adoption, enterprise
+                                            architecture, and digital transformation.</span>
+                                    </a>
+                                    <a href="services.html#creative" class="mega-menu-item">
+                                        <span class="mm-title">Creative Production Facilities</span>
+                                        <span class="mm-desc">Premium spaces for video shoots, photography, and branded
+                                            content creation.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="case-studies.html">Case Study</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="contact.html" class="btn btn-primary">Get Consultation</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in-up">HUMEEN Premium Portfolio</h1>
+            <p class="fade-in-up delay-1">A glimpse into our capabilities, success stories, and premium solutions.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="portfolio-intro">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="feature-box">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                    HUMEEN is a premium, digital-first, full-stack IT and growth partner for startups, enterprises, and
+                    governments. Our strongest capability is <strong>Digital Marketing</strong>, backed by proven ROI,
+                    authentic storytelling, and scalable technology solutions. Right next to it, we specialize in
+                    <strong>Influencer Production</strong>—delivering end-to-end campaigns that amplify brand voices
+                    with creativity and impact. Alongside these, we provide IT Consulting, Web Services, App
+                    Development, and Creative Production Facilities to help organizations modernize, optimize, and
+                    transform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Services -->
+    <section class="section-padding" style="background: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Our Premium Services</h2>
+            <div class="service-list-grid">
+                <div class="portfolio-service-card">
+                    <h3>Digital Marketing</h3>
+                    <p>Performance campaigns, SEO, SEM, social media management, influencer marketing, content creation,
+                        analytics-driven growth.</p>
+                </div>
+                <div class="portfolio-service-card">
+                    <h3>Influencer Production</h3>
+                    <p>Complete influencer ecosystem: scouting, campaign design, content production, video shoots,
+                        branded collaborations, and performance tracking.</p>
+                </div>
+                <div class="portfolio-service-card">
+                    <h3>IT Consulting Services</h3>
+                    <p>Strategy, infrastructure, cloud adoption, enterprise architecture, and digital transformation.
+                    </p>
+                </div>
+                <div class="portfolio-service-card">
+                    <h3>Web Services</h3>
+                    <p>Website creation, hosting, optimization, e-commerce solutions, and premium maintenance.</p>
+                </div>
+                <div class="portfolio-service-card">
+                    <h3>App Development</h3>
+                    <p>Custom mobile and web applications designed for scalability, usability, and innovation.</p>
+                </div>
+                <div class="portfolio-service-card">
+                    <h3>Creative Production</h3>
+                    <p>Premium spaces for video shoots, photography, and branded content creation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Premium Success Stories</h2>
+            <div class="success-grid">
+                <div class="success-card">
+                    <h4>Film Institution</h4>
+                    <div class="stat">1,170 Leads</div>
+                    <p>Generated at ₹3.68 per lead</p>
+                </div>
+                <div class="success-card">
+                    <h4>Jewelry Brand</h4>
+                    <div class="stat">9.88x ROAS</div>
+                    <p>₹1.15L+ Sales via Google & Meta Ads</p>
+                </div>
+                <div class="success-card">
+                    <h4>Spa Services</h4>
+                    <div class="stat">10.08% Conv. Rate</div>
+                    <p>65 Leads Generated</p>
+                </div>
+                <div class="success-card">
+                    <h4>Beauty Academy</h4>
+                    <div class="stat">₹111.45 CPA</div>
+                    <p>42 Leads Generated</p>
+                </div>
+                <div class="success-card">
+                    <h4>Clothing Brand</h4>
+                    <div class="stat">115 Purchases</div>
+                    <p>₹44,363 Sales in single campaign</p>
+                </div>
+                <div class="success-card">
+                    <h4>Anime Merchandise</h4>
+                    <div class="stat">2.7L+ Reach</div>
+                    <p>₹33,889 Sales Generated</p>
+                </div>
+                <div class="success-card">
+                    <h4>Intl. Clothing Brand</h4>
+                    <div class="stat">$20,108 Sales</div>
+                    <p>Across 188 Campaigns</p>
+                </div>
+                <div class="success-card">
+                    <h4>Furniture Brand</h4>
+                    <div class="stat">₹79.36 CPL</div>
+                    <p>170 Leads Generated</p>
+                </div>
+                <div class="success-card">
+                    <h4>Music Academy</h4>
+                    <div class="stat">₹10.15 CPL</div>
+                    <p>505 Leads Generated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government & Enterprise -->
+    <section class="section-padding" style="background: #eef2f6;">
+        <div class="container">
+            <div class="row">
+                <div class="col full-width">
+                    <h2 class="section-title">Government & Enterprise Solutions</h2>
+                    <p style="margin-bottom: 2rem;">We specialize in solving systemic challenges:</p>
+                    <ul class="why-humeen-list">
+                        <li><strong>Laggy portals</strong> → Optimized, scalable platforms</li>
+                        <li><strong>Low adoption</strong> → Citizen-first design & UX</li>
+                        <li><strong>Fragmented systems</strong> → Unified IT architecture</li>
+                    </ul>
+                    <p style="margin-top: 2rem;">Our premium approach ensures governments and enterprises can deliver
+                        digital transformation that feels seamless, trustworthy, and future-ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why HUMEEN -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Why HUMEEN</h2>
+            <ul class="why-humeen-list">
+                <li>Digital-first premium partner with expertise across all marketing channels</li>
+                <li>Influencer production as a core growth driver</li>
+                <li>Trusted IT consulting services for modernization and transformation</li>
+                <li>Comprehensive web services and app development for scalable growth</li>
+                <li>Creative content facilities for professional brand storytelling</li>
+                <li>Agility of a startup, reliability of a full-stack provider</li>
+                <li>Human-first content and solutions—never robotic, always authentic</li>
+                <li>Proven ROI through measurable case studies</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Closing Note -->
+    <section class="closing-note">
+        <div class="container">
+            <h2>Closing Note</h2>
+            <p>HUMEEN isn’t just a service provider—we’re a premium growth partner. With Digital Marketing as our first
+                preference and Influencer Production as our second strongest capability, combined with IT Consulting,
+                Web Services, App Development, and Creative Content Facilities, we help startups scale faster and
+                governments modernize smarter.</p>
+            <br>
+            <a href="contact.html" class="btn btn-primary">Partner With Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Humeen<span class="dot">.</span></h3>
+                    <p>Digital Marketing & IT Solutions tailored for your growth.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-studies.html">Case Study</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 Humeen. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

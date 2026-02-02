@@ -1,4 +1,0 @@
-- [x] Change hero background to light color (e.g., white or light-indigo)
-- [x] Update hero text color to dark for readability
-- [x] Adjust hero buttons to work on light background (change btn-outline to dark border and text)
-- [x] Adjust decorative shapes to light theme (change colors to lighter shades)

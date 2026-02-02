@@ -29,7 +29,10 @@
     <header id="main-header">
         <div class="container">
             <div class="logo">
-                <a href="#">Humeen<span class="dot">.</span></a>
+                <a href="index.html">
+                    <img src="images/humeen-logo.png" alt="Humeen Logo">
+                    <span class="logo-text">Humeen<span class="dot">.</span></span>
+                </a>
             </div>
             <nav id="navbar">
                 <ul>
@@ -43,12 +46,12 @@
                                 <div class="mm-column">
                                     <h4 class="mm-header">Growth</h4>
                                     <a href="services.html#marketing" class="mega-menu-item">
-                                        <span class="mm-title">All Kinds of Digital Marketing</span>
+                                        <span class="mm-title">Digital Marketing</span>
                                         <span class="mm-desc">Performance campaigns, SEO, SEM, social media management,
                                             influencer marketing, content creation, analytics-driven growth.</span>
                                     </a>
                                     <a href="services.html#influencer" class="mega-menu-item">
-                                        <span class="mm-title">Influencer Production (All Kinds)</span>
+                                        <span class="mm-title">Influencer Production</span>
                                         <span class="mm-desc">Complete influencer ecosystem: scouting, campaign design,
                                             content production, video shoots, branded collaborations, and performance
                                             tracking.</span>
@@ -59,12 +62,12 @@
                                 <div class="mm-column">
                                     <h4 class="mm-header">Development</h4>
                                     <a href="services.html#web" class="mega-menu-item">
-                                        <span class="mm-title">All Kinds of Web Services</span>
+                                        <span class="mm-title">Web Services</span>
                                         <span class="mm-desc">Website creation, hosting, optimization, e-commerce
                                             solutions, and premium maintenance.</span>
                                     </a>
                                     <a href="services.html#app" class="mega-menu-item">
-                                        <span class="mm-title">All Kinds of App Development</span>
+                                        <span class="mm-title">App Development</span>
                                         <span class="mm-desc">Custom mobile and web applications designed for
                                             scalability, usability, and innovation.</span>
                                     </a>
@@ -87,6 +90,7 @@
                             </div>
                         </div>
                     </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="case-studies.html">Case Study</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -384,6 +388,89 @@
                 </div>
             </footer>
 
+            <!-- Lead Generation Modal -->
+            <div id="leadGenModal" class="lead-modal">
+                <div class="lead-modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-header">
+                        <h2>Like what you see?</h2>
+                        <p>Drop in your details and let's work on your brand together</p>
+                    </div>
+                    <form id="leadGenForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name*</label>
+                                <input type="text" name="name" placeholder="Your good name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Designation*</label>
+                                <input type="text" name="designation"
+                                    placeholder="Founder, Manager, Marketing Head, etc." required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email ID*</label>
+                                <input type="email" name="email" placeholder="We’ll only use this to reply" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number*</label>
+                                <div class="phone-input">
+                                    <span class="country-code"><img src="https://flagcdn.com/w20/in.png" alt="India">
+                                        +91 |</span>
+                                    <input type="tel" name="phone" placeholder="For a quick discussion" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Company*</label>
+                                <input type="text" name="company" placeholder="Your business or startup name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Looking for*</label>
+                                <select name="service" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Branding & Design">Branding & Design</option>
+                                    <option value="IT Consulting">IT Consulting</option>
+                                    <option value="Automation / Tools">Automation / Tools</option>
+                                    <option value="Not sure yet">Not sure yet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Industry</label>
+                                <input type="text" name="industry" placeholder="Your business domain">
+                            </div>
+                            <div class="form-group">
+                                <label>Monthly Marketing Budget*</label>
+                                <select name="budget" required>
+                                    <option value="" disabled selected>Choose a comfortable range</option>
+                                    <option value="50k">&lt; ₹50,000</option>
+                                    <option value="50k-2L">₹50,000 - ₹2,00,000</option>
+                                    <option value="2L-10L">₹2,00,000 - ₹10,00,000</option>
+                                    <option value="10L+">₹10,00,000+</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row full-width">
+                            <div class="form-group">
+                                <label>Message / Comment</label>
+                                <textarea name="message" placeholder="Tell us briefly about your idea or challenge"
+                                    rows="3"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit-lead">Submit now</button>
+                    </form>
+                </div>
+            </div>
+
+            <script src="js/form-handler.js"></script>
             <script src="js/main.js"></script>
 </body>
 

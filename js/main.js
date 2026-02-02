@@ -145,3 +145,42 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', filterServices);
 
 });
+
+// --- Lead Generation Modal Logic ---
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('leadGenModal');
+    const closeBtn = document.querySelector('.close-modal');
+    // Target the "Who We Are" section (ID: about)
+    const targetSection = document.getElementById('about');
+
+    if (modal && targetSection) {
+        // Intersection Observer to detect when "Who We Are" comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Check if modal has already been shown this session
+                    if (!sessionStorage.getItem('humeen_modal_shown')) {
+                        modal.style.display = 'flex';
+                        sessionStorage.setItem('humeen_modal_shown', 'true');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.3 // Trigger when 30% of the section is visible
+        });
+
+        observer.observe(targetSection);
+
+        // Close Modal Logic
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+});

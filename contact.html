@@ -22,7 +22,10 @@
     <header id="main-header">
         <div class="container">
             <div class="logo">
-                <a href="index.html">Humeen<span class="dot">.</span></a>
+                <a href="index.html">
+                    <img src="images/humeen-logo.png" alt="Humeen Logo">
+                    <span class="logo-text">Humeen<span class="dot">.</span></span>
+                </a>
             </div>
             <nav id="navbar">
                 <ul>
@@ -37,11 +40,14 @@
                                     <h4 class="mm-header">Growth</h4>
                                     <a href="services.html#marketing" class="mega-menu-item">
                                         <span class="mm-title">Digital Marketing</span>
-                                        <span class="mm-desc">SEO, SEM, social & content strategies.</span>
+                                        <span class="mm-desc">Performance campaigns, SEO, SEM, social media management,
+                                            influencer marketing, content creation, analytics-driven growth.</span>
                                     </a>
                                     <a href="services.html#influencer" class="mega-menu-item">
                                         <span class="mm-title">Influencer Production</span>
-                                        <span class="mm-desc">Campaigns, content & video.</span>
+                                        <span class="mm-desc">Complete influencer ecosystem: scouting, campaign design,
+                                            content production, video shoots, branded collaborations, and performance
+                                            tracking.</span>
                                     </a>
                                 </div>
 
@@ -50,11 +56,13 @@
                                     <h4 class="mm-header">Development</h4>
                                     <a href="services.html#web" class="mega-menu-item">
                                         <span class="mm-title">Web Services</span>
-                                        <span class="mm-desc">Dev, hosting & e-commerce.</span>
+                                        <span class="mm-desc">Website creation, hosting, optimization, e-commerce
+                                            solutions, and premium maintenance.</span>
                                     </a>
                                     <a href="services.html#app" class="mega-menu-item">
                                         <span class="mm-title">App Development</span>
-                                        <span class="mm-desc">Mobile & web applications.</span>
+                                        <span class="mm-desc">Custom mobile and web applications designed for
+                                            scalability, usability, and innovation.</span>
                                     </a>
                                 </div>
 
@@ -62,17 +70,20 @@
                                 <div class="mm-column">
                                     <h4 class="mm-header">Enterprise & Creative</h4>
                                     <a href="services.html#consulting" class="mega-menu-item">
-                                        <span class="mm-title">IT Consulting</span>
-                                        <span class="mm-desc">Strategy & cloud solutions.</span>
+                                        <span class="mm-title">IT Consulting Services</span>
+                                        <span class="mm-desc">Strategy, infrastructure, cloud adoption, enterprise
+                                            architecture, and digital transformation.</span>
                                     </a>
                                     <a href="services.html#creative" class="mega-menu-item">
-                                        <span class="mm-title">Creative Production</span>
-                                        <span class="mm-desc">Video, photo & branding.</span>
+                                        <span class="mm-title">Creative Production Facilities</span>
+                                        <span class="mm-desc">Premium spaces for video shoots, photography, and branded
+                                            content creation.</span>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="case-studies.html">Case Study</a></li>
                     <li><a href="blog.html">Blog</a></li>
@@ -101,11 +112,8 @@
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h2>Let's Talk</h2>
-                    <p>HUMEEN isn’t just a service provider—we’re a premium growth partner. With Digital Marketing as
-                        our first preference and Influencer Production as our second strongest capability, combined with
-                        IT Consulting, Web Services, App Development, and Creative Content Facilities, we help startups
-                        scale faster and governments modernize smarter.</p>
+                    <h2>Start With a Simple Hello</h2>
+                    <p>Share a few details and let’s explore what’s possible for your brand.</p>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>123 Innovation Drive, Tech City, TC 90210</span>
@@ -121,17 +129,67 @@
                 </div>
                 <div class="contact-form-box">
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name*</label>
+                                <input type="text" id="name" placeholder="Your good name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="designation">Designation*</label>
+                                <input type="text" id="designation" placeholder="Founder, Manager, Marketing Head, etc."
+                                    required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email ID*</label>
+                                <input type="email" id="email" placeholder="We’ll only use this to reply" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" placeholder="For a quick discussion" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" required></textarea>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company*</label>
+                                <input type="text" id="company" placeholder="Your business or startup name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Looking for*</label>
+                                <select id="service" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Branding & Design">Branding & Design</option>
+                                    <option value="IT Consulting">IT Consulting</option>
+                                    <option value="Automation / Tools">Automation / Tools</option>
+                                    <option value="Not sure yet">Not sure yet</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <input type="text" id="industry" placeholder="Your business domain">
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Monthly Marketing Budget*</label>
+                                <select id="budget" required>
+                                    <option value="" disabled selected>Choose a comfortable range</option>
+                                    <option value="<50k">&lt; ₹50,000</option>
+                                    <option value="50k-2L">₹50,000 - ₹2,00,000</option>
+                                    <option value="2L-10L">₹2,00,000 - ₹10,00,000</option>
+                                    <option value="10L+">₹10,00,000+</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="message">Message / Comment</label>
+                            <textarea id="message" rows="4" placeholder="Tell us briefly about your idea or challenge"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn-block">Send Message</button>
                     </form>
@@ -175,6 +233,7 @@
         </div>
     </footer>
 
+    <script src="js/form-handler.js"></script>
     <script src="js/main.js"></script>
 </body>
 
