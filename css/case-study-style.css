@@ -1,0 +1,210 @@
+/* --- Case Study Single Page Styles --- */
+
+/* Header Badge */
+.case-study-badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    background: transparent;
+}
+
+/* Header Grid */
+.case-header-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.case-main-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 500;
+    /* Editorial feel */
+    color: #111;
+    font-family: var(--font-heading);
+}
+
+.case-intro-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+/* Content Grid */
+.case-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    /* Split Equal */
+    gap: 4rem;
+    position: relative;
+    padding-top: 3rem;
+}
+
+/* Details Column */
+.case-block {
+    margin-bottom: 3rem;
+}
+
+.section-header-accent {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-indigo);
+    /* The vertical accent */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.case-block p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.case-solution-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: #444;
+}
+
+.case-solution-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Results Cards */
+.results-grid {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    flex: 1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    /* Very subtle shadow */
+}
+
+.result-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.result-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.text-small-muted {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Visuals Column */
+.case-visuals-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* Optional: Sticky or just structured */
+}
+
+.case-img-rounded {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    box-shadow: var(--shadow-sm);
+    object-fit: cover;
+}
+
+.first-image img {
+    height: 300px;
+}
+
+.second-image img {
+    height: 400px;
+    /* Taller potrait style */
+}
+
+/* Decorative Shape (Greenish circle in ref) */
+.visual-bg-shape {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(200, 230, 201, 0.4), rgba(255, 255, 255, 0));
+    /* Using a soft green/white gradient similar to ref but keeping it neutral or indigo if preferred.
+       Let's stick to a soft indigo tint to match brand */
+    background: linear-gradient(135deg, rgba(61, 82, 160, 0.05), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    z-index: -1;
+    bottom: -50px;
+    right: -50px;
+}
+
+.section-padding-bottom {
+    padding-bottom: var(--section-padding);
+    overflow: hidden;
+    /* Prevent decorative shape from causing scroll */
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+    .case-header-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .case-main-title {
+        font-size: 2.5rem;
+    }
+
+    .case-visuals-col {
+        order: -1;
+        /* Visualize first on mobile? or last. Standard is usually content first, but visuals are engaging. Let's keep content first. */
+        order: 1;
+        margin-top: 2rem;
+    }
+}
+
+/* Key Takeaways Box */
+.key-takeaways-box {
+    background-color: rgba(61, 82, 160, 0.08);
+    /* Light Indigo Tint */
+    border-left: 4px solid var(--primary-indigo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.key-takeaways-box p {
+    color: var(--deep-indigo);
+    font-weight: 500;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}

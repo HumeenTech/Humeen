@@ -15,6 +15,38 @@ resetSessionState();
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- FAQ Accordion Logic ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            console.log('FAQ clicked');
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+
+            // Close other items (optional - accordion style)
+            const otherItems = document.querySelectorAll('.faq-item');
+            otherItems.forEach(other => {
+                if (other !== item && other.classList.contains('active')) {
+                    other.classList.remove('active');
+                    other.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            // Toggle current
+            item.classList.toggle('active');
+
+            if (item.classList.contains('active')) {
+                const height = answer.scrollHeight;
+                console.log('Opening item. ScrollHeight:', height);
+                answer.style.maxHeight = height + "px";
+            } else {
+                console.log('Closing item');
+                answer.style.maxHeight = null;
+            }
+        });
+    });
+
     // --- Navigation Toggle (Mobile) ---
     const menuToggle = document.getElementById('mobile-menu');
     const navbar = document.getElementById('navbar');
@@ -198,33 +230,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// --- FAQ Accordion Logic ---
-document.addEventListener('DOMContentLoaded', function () {
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                }
-            });
-
-            // Toggle current item
-            item.classList.toggle('active');
-
-            if (!isActive) {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            } else {
-                answer.style.maxHeight = null;
-            }
-        });
-    });
-});
