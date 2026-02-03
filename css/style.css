@@ -798,6 +798,30 @@ header.scrolled .bar {
     border: 1px solid var(--light-indigo);
 }
 
+/* CTA Section Dark (moved from inline styles) */
+.cta-section-dark {
+    padding: 5rem 0;
+    background: var(--deep-indigo);
+    color: white;
+}
+
+.cta-title-light {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.cta-desc-light {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.btn-white-primary {
+    background: white;
+    color: var(--primary-indigo);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .blog-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
@@ -2391,7 +2415,7 @@ footer {
     line-height: 1.6;
     font-size: 0.95rem;
 }
-}
+
 
 
 /* Dark mode overrides (if applicable broadly, but mainly component based here) */
@@ -2522,4 +2546,47 @@ footer {
     box-shadow: var(--shadow-lg);
     text-align: center;
     border: 1px solid #eee;
+}
+
+.section-padding {
+    padding: var(--section-padding);
+}
+
+/* --- Blog Widget & Helper Classes (Refactored from inline) --- */
+.cat-bg.bg-indigo {
+    background: linear-gradient(to right, rgba(57, 73, 171, 0.1), transparent);
+}
+
+.cat-icon.icon-indigo {
+    background: #3949ab;
+}
+
+.cat-bg.bg-pink {
+    background: linear-gradient(to right, rgba(233, 30, 99, 0.1), transparent);
+}
+
+.cat-icon.icon-pink {
+    background: #e91e63;
+}
+
+.cat-bg.bg-green {
+    background: linear-gradient(to right, rgba(76, 175, 80, 0.1), transparent);
+}
+
+.cat-icon.icon-green {
+    background: #4caf50;
+}
+
+.highlight-box {
+    background: rgba(112, 145, 230, 0.05);
+    padding: 1rem;
+    border-left: 4px solid var(--soft-indigo);
+    border-radius: 4px;
+}
+
+.placeholder-box {
+    height: 200px;
+    background: #eee;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
