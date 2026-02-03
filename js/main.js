@@ -1,5 +1,18 @@
 // Main JS for Humeen Website
 
+// Function to reset cookies and storage for fresh session every time
+function resetSessionState() {
+    console.log("Resetting session state...");
+    sessionStorage.clear();
+    localStorage.clear();
+    document.cookie.split(";").forEach((c) => {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+}
+
+// Reset immediately
+resetSessionState();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navigation Toggle (Mobile) ---
