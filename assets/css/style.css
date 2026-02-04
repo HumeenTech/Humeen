@@ -3254,3 +3254,287 @@ footer {
         margin-bottom: 1rem;
     }
 }
+
+/* --- Growth Marketing Section --- */
+.horizontal-scroll-container {
+    height: 500vh;
+    /* Accommodate 5 service slides */
+    position: relative;
+    background: linear-gradient(135deg, var(--light-indigo) 0%, var(--primary-white) 100%);
+}
+
+#growth-marketing {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.growth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    gap: 2rem;
+    padding: 0 8%;
+}
+
+.growth-header .section-title {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 0;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    background: var(--grad-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-brand-pill {
+    display: inline-block;
+    padding: 0.9rem 2.4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    background: var(--grad-primary);
+    color: var(--primary-white);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+}
+
+.btn-brand-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.growth-grid {
+    display: flex;
+    gap: 2.5rem;
+    padding-left: 8%;
+    will-change: transform;
+}
+
+.growth-card {
+    flex: 0 0 380px;
+    height: 420px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow-md);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+}
+
+.growth-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-text {
+    padding: 2.5rem;
+    position: relative;
+    z-index: 20;
+    /* Ensure header is always on top */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.card-header-row h3 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    margin-bottom: 0;
+    color: var(--primary-indigo);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.card-header-row i {
+    font-size: 1.1rem;
+    color: var(--primary-indigo);
+    opacity: 0.5;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.growth-card.expanded .toggle-card {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+.card-text p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin: 0;
+
+    /* Reveal styles center on the image mockup area */
+    position: absolute;
+    top: 95px;
+    /* Offset for better vertical balance */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 95px);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 10;
+    text-align: center;
+}
+
+.growth-card.expanded .card-text p {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.card-text p strong {
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-indigo);
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s;
+}
+
+.growth-card.expanded .card-text p strong {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-text p a {
+    color: var(--primary-indigo);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.card-mockup {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.card-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: multiply;
+    transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: blur(0) brightness(1);
+}
+
+.growth-card.expanded .card-mockup img {
+    filter: blur(20px) brightness(1.1) saturate(120%);
+    opacity: 0.25;
+    transform: scale(1.1);
+}
+
+
+/* Brand Tinted Layers */
+.card-digital .card-mockup {
+    background-color: rgba(61, 82, 160, 0.08);
+    /* SEO/Digital Indigo */
+    padding: 2rem 2rem 0;
+}
+
+.card-content .card-mockup {
+    background-color: rgba(112, 145, 230, 0.08);
+    /* Ads/Creative Blue */
+    padding: 2rem 2rem 0;
+}
+
+.card-web .card-mockup {
+    background-color: rgba(61, 82, 160, 0.05);
+    /* Social/Web Indigo */
+    padding: 2rem 2rem 0;
+}
+
+.card-app .card-mockup {
+    background-color: rgba(112, 145, 230, 0.1);
+    /* Email/App Blue */
+    padding: 2rem 2rem 0;
+}
+
+.card-crm .card-mockup {
+    background-color: rgba(61, 82, 160, 0.1);
+    /* Content/CRM Indigo */
+    padding: 2rem 2rem 0;
+}
+
+/* Glass Refraction Effect on Hover */
+.growth-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+@media (max-width: 1024px) {
+    .growth-header .section-title {
+        font-size: 2.5rem;
+    }
+
+    .growth-header {
+        margin-bottom: 2rem;
+        padding: 0 5%;
+    }
+
+    .growth-grid {
+        padding-left: 5%;
+        gap: 1.5rem;
+    }
+
+    .growth-card {
+        flex: 0 0 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .growth-card {
+        flex: 0 0 310px;
+    }
+
+    .card-text {
+        padding: 2rem;
+    }
+
+    .growth-header .section-title {
+        font-size: 2rem;
+    }
+}

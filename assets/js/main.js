@@ -201,9 +201,67 @@ document.addEventListener('DOMContentLoaded', () => {
     // Run on load
     filterServices();
 
-    // Run on hash change (when clicking menu links while already on the page)
-    window.addEventListener('hashchange', filterServices);
+    // --- Sticky Horizontal Scroll Logic ---
+    const horizontalContainer = document.querySelector('.horizontal-scroll-container');
+    const stickySection = document.getElementById('growth-marketing');
+    const grid = document.querySelector('.growth-grid');
 
+    if (horizontalContainer && stickySection && grid) {
+        window.addEventListener('scroll', () => {
+            const containerTop = horizontalContainer.offsetTop;
+            const containerHeight = horizontalContainer.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const scrollPos = window.scrollY;
+
+            // Calculate progress (0 to 1) of the scroll within the container
+            // The scroll starts when the container reaches the top of the viewport
+            // and ends and when the container is scrolled past.
+            const start = containerTop;
+            const end = containerTop + containerHeight - viewportHeight;
+
+            if (scrollPos >= start && scrollPos <= end) {
+                const progress = (scrollPos - start) / (containerHeight - viewportHeight);
+                const maxTranslate = grid.scrollWidth - grid.offsetWidth;
+                const translateX = progress * maxTranslate;
+                grid.style.transform = `translateX(-${translateX}px)`;
+            } else if (scrollPos < start) {
+                grid.style.transform = `translateX(0px)`;
+            } else if (scrollPos > end) {
+                const maxTranslate = grid.scrollWidth - grid.offsetWidth;
+                grid.style.transform = `translateX(-${maxTranslate}px)`;
+            }
+        });
+
+        // Handle Resize to ensure math stays correct
+        window.addEventListener('resize', () => {
+            // Force a scroll event to update position
+            window.dispatchEvent(new Event('scroll'));
+        });
+
+        // --- Card Toggle Logic ---
+        const toggleIcons = document.querySelectorAll('.toggle-card');
+        const cards = document.querySelectorAll('.growth-card');
+
+        toggleIcons.forEach(icon => {
+            icon.addEventListener('click', (e) => {
+                const card = icon.closest('.growth-card');
+                const isAlreadyExpanded = card.classList.contains('expanded');
+
+                // Close other cards
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('expanded');
+                    }
+                });
+
+                // Toggle current card
+                card.classList.toggle('expanded');
+
+                // Refresh scroll math if card dimensions change (though height is now fixed)
+                window.dispatchEvent(new Event('scroll'));
+            });
+        });
+    }
 });
 
 // --- Lead Generation Modal Logic ---
