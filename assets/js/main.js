@@ -63,6 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Mega Menu Toggle ---
+    const megaMenuLink = document.querySelector('.has-mega-menu > a');
+    if (megaMenuLink) {
+        megaMenuLink.addEventListener('click', (e) => {
+            // Only toggle on mobile or if we want click behavior everywhere
+            // Checking window width matches CSS breakpoint
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                const parentLi = megaMenuLink.parentElement;
+                parentLi.classList.toggle('mega-active');
+            }
+        });
+    }
+
     // --- Active Navigation Link ---
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('#navbar a');
@@ -75,9 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
-        if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === '#')) { // Handle home link edge case if needed, though usually index.html is explicit
+        // Handle explicit paths or relative paths by checking if the filename matches
+        if (linkPage.endsWith(currentPage) || (currentPage === 'index.html' && (linkPage === '#' || linkPage === './'))) {
             link.classList.add('active');
-        } else if (currentPage === '' && linkPage === 'index.html') {
+        } else if (currentPage === '' && linkPage.endsWith('index.html')) {
             link.classList.add('active');
         }
     });
