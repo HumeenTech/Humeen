@@ -303,3 +303,39 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+/* --- Business Solutions Tabs --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.biz-tab');
+    const panels = document.querySelectorAll('.biz-panel');
+
+    if (tabs.length > 0) {
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.getAttribute('data-tab');
+
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Hide all panels
+                panels.forEach(panel => {
+                    panel.classList.remove('active');
+                    panel.style.display = 'none'; // Force hide for animation reset
+                });
+
+                // Show target panel
+                const targetPanel = document.getElementById(`${targetId}-panel`);
+                if (targetPanel) {
+                    targetPanel.style.display = 'block';
+                    // Small delay to allow display:block to apply before opacity transition
+                    setTimeout(() => {
+                        targetPanel.classList.add('active');
+                    }, 10);
+                }
+            });
+        });
+    }
+});
+
