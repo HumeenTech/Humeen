@@ -339,3 +339,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/* --- Dashboard Section Tabs --- */
+document.addEventListener('DOMContentLoaded', () => {
+    const dashTabs = document.querySelectorAll('.dash-tab');
+    const dashPanels = document.querySelectorAll('.dash-panel');
+
+    if (dashTabs.length > 0) {
+        dashTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetKey = tab.getAttribute('data-dash');
+
+                // Reset all
+                dashTabs.forEach(t => t.classList.remove('active'));
+                dashPanels.forEach(p => {
+                    p.classList.remove('active');
+                    p.style.display = 'none';
+                });
+
+                // Set Active
+                tab.classList.add('active');
+
+                const targetPanel = document.getElementById(`${targetKey}-panel`);
+                if (targetPanel) {
+                    targetPanel.style.display = 'block';
+                    setTimeout(() => targetPanel.classList.add('active'), 10);
+                }
+            });
+        });
+    }
+});
+
